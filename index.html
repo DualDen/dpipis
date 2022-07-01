@@ -1,0 +1,84 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Tetris Game</title>
+    <style>
+      @media screen and (max-width: 600px) {
+      .can{
+        width: 70%!important;
+        height: 90%;
+      }
+      }
+      .right{
+        margin-right: 50px;
+      }
+      .btn{
+        font-family: 'Montserrat', sans-serif;
+        background: #ffcc99;
+        border: 1px solid #ffcc99;
+        padding: 10px;
+        border-radius: 10px;
+      }
+      .buttons{
+        position: absolute;
+      }
+      button:hover {
+        background-color: #bca0dc !important;
+      }
+      button:active {
+        background-color: #9969d0 !important;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas class="can" id="canvas" width="400" height="800"> </canvas>
+    <canvas
+      id="nextShapeCanvas"
+      width="200"
+      height="200"
+      style="position: absolute; top: 10"
+    >
+    </canvas>
+
+    <canvas
+      id="scoreCanvas"
+      width="200"
+      height="200"
+      style="position: absolute; top: 220"
+    >
+    </canvas>
+
+    <button
+      style="
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        background-color: gray;
+        border: 0px;
+      "
+      onClick="resetVars()"
+    >
+      <svg height="100%" version="1.1" viewBox="0 0 36 36" width="100%">
+        <use class="ytp-svg-shadow" xlink:href="#ytp-id-54"></use>
+        <path
+          class="ytp-svg-fill"
+          fill="#ffffff"
+          d="M 18,11 V 7 l -5,5 5,5 v -4 c 3.3,0 6,2.7 6,6 0,3.3 -2.7,6 -6,6 -3.3,0 -6,-2.7 -6,-6 h -2 c 0,4.4 3.6,8 8,8 4.4,0 8,-3.6 8,-8 0,-4.4 -3.6,-8 -8,-8 z"
+          id="ytp-id-54"
+        ></path>
+      </svg>
+    </button>
+    <img id="image" src="rotations.png" style="display: none" />
+     <div class="buttons">
+    <button class="btn left">Влево</button> 
+    <button class="btn right">Вправо</button>
+    <button class="btn rev">Перевернуть</button>
+    <button class="btn bot">Вниз</button>
+  </div>
+
+    <script src="tetris.js"></script>
+  </body>
+</html>
